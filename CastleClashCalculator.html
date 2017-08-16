@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Castle Clash Calculator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="300">
+	<!-- Navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"></a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div><!-- end navbar-header -->
+			<div class="navbar-collapse collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#my-slider" class="selected">Start</a></li>
+					<li><a href="#Stats">Hero stats</a></li>
+					<li><a href="#Evo">Evolution</a></li>
+				</ul>
+			</div><!-- end navbar-collapse -->
+		</div><!-- end container-fluid -->
+	</nav>
+	<main>
+		<div id="my-slider" class="carousel slide" data-ride="carousel">
+			<!-- Indicators dot nov -->
+			<ol class="carousel-indicators">
+				<li data-target="#my-slider" data-slide-to="0" class="active"></li>
+				<li data-target="#my-slider" data-slide-to="1"></li>
+				<li data-target="#my-slider" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" align="center" role="listbox">
+				<div class="item active">
+					<div class="slideHeader">
+						<img id="logo" src="images/textLogo.png" alt="textLogo"/>
+					</div>
+					<div id="startSlide">
+						<h1><small><cite>- THE ULTIMATE TOOL</cite></small></h1>
+						<img src="images/logo.png" class="img-thumbnail" alt="logo"/>
+					</div>
+				</div>
+				<div class="item">
+					<div class="slideHeader">
+						<h1>Hero stats</h1>
+						<h1><small>Get the stats you need!</small></h1>
+					</div>
+					<img src="images/EvolvedPumpkinDuke.png" class="img-thumbnail" alt="hero"/>
+					<a href="#Stats" type="button" class="glyphicon glyphicon-menu-down"></a>
+				</div>
+				<div class="item">
+					<div class="slideHeader">
+						<h1>Evolution</h1>
+						<h1><small>Ready for evolution?</small></h1>
+					</div>
+					<img src="images/ESM.png" class="img-thumbnail" alt="hero"/>
+					<a href="#Evo" type="button" class="glyphicon glyphicon-menu-down"></a>
+				</div>
+			</div>
+			<!-- controls or next and prev buttons -->
+			<a class="left carousel-control" href="#my-slider" role="button"  data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#my-slider" role="button"  data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+		<div id="Stats" class="container-fluid section">
+			<h1>Hero stats</h1>
+			<div class="container-fluid Calc">
+				<div id="statsInput" class="Input">
+					<form class="form well">
+						<div class="form-group">
+							<div id="Hero" class="attr">
+								<label>Hero</label>
+								<select id="selectHero" class="form-control">
+									<option value="0">Pumpkin Duke</option>
+									<option value="1">Skull Knight</option>
+								</select>
+							</div>
+							<div id="HeroLevel" class="attr">
+								<label>Lv</label>
+								<input id="inputHeroLevel" type="number" class="form-control" placeholder="Level"></input>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="attr">
+								<label>Skill</label>
+								<input id="inputSkill" class="form-control" placeholder="Skill" readonly></input>
+							</div>
+							<div class="attr">
+								<label>Lv</label>
+								<select id="selectSkillLevel" class="form-control">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+									<option value="10">10</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="attr">
+								<label>Talent</label>
+								<select id="selectTalent" class="form-control">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+							<div class="attr">
+								<label>Lv</label>
+								<select id="selectTalentLevel" class="form-control">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="attr">
+								<label>Crest</label>
+								<select id="selectCrest" class="form-control">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+							<div class="attr">
+								<label>Lv</label>
+								<select id="selectCrestLevel" class="form-control">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="attr">
+								<label>Inscription</label>
+								<input id="inputInscription" type="number" class="form-control" placeholder="Level"></input>
+							</div>
+							<div class="attr">
+								<label>Evo</label>
+								<select id="selectEvo" class="form-control">
+									<option value="no">No</option>
+									<option value="single">Single</option>
+									<option value="double">Double</option>
+								</select>
+							</div>
+						</div>
+						<div id="groupArtifact" class="form-group">
+							<div class="attr">
+								<label>Artifact</label>
+								<select id="selectArtifact" class="form-control">
+									<option value="Victor's Emblem">Victor's Emblem</option>
+									<option value="Lightning Rock">Lightning Rock</option>
+									<option value="Blitz Scroll">Blitz Scroll</option>
+									<option value="Axe of Strife">Axe of Strife</option>
+									<option value="Eye of Garuda">Eye of Garuda</option>
+									<option value="Goblet of Life">Goblet of Life</option>
+								</select>
+							</div>
+							<div class="attr">
+								<label>Lv</label>
+								<select id="selectArtifactLevel" class="form-control">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+						</div>
+						<a id="statsBtnCalc" type="button" class="btn btn-success btnCalc">Calc</a>
+					</form>
+				</div><!-- end Input -->
+				<div id="statsOutput" class="Output">
+					<ul id="statsTableNav" class="nav nav-pills TableNav">
+						<li>
+							<label>Skill lv</label>
+							<select id="quickSelectSkillLevel" class="form-control">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</li>
+						<li>
+							<label>Talent lv</label>
+							<select id="quickSelectTalentLevel" class="form-control">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+							</select>
+						</li>
+						<li>
+							<label>Crest lv</label>
+							<select id="quickSelectCrestLevel" class="form-control">
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+						</li>
+						<li>
+							<a id="statsEdit" href="#statsInput" class="btn btn-success">Show</a>
+						</li>
+					</ul><!-- end nav -->
+					<div class="table-responsive well">
+					  <table class="table">
+						<tbody>
+						  <tr>
+							<td>ATK</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>ATK speed</td>
+							<td id="ATKSPD">-</td>
+						  </tr>
+						  <tr>
+							<td>DMG</td>
+							<td id="DMG">-</td>
+						  </tr>
+						  <tr>
+							<td>HP</td>
+							<td id="HP">-</td>
+						  </tr>
+						  <tr>
+							<td>MOV speed</td>
+							<td id="MOV">-</td>
+						  </tr>
+						  <tr>
+							<td>ACC</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>Dodge</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>CRIT</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>CRIT DMG</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>CRIT Resist</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>Skill effect</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>Talent effect</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>Crest effect</td>
+							<td>-</td>
+						  </tr>
+						  <tr>
+							<td>Artifact effect</td>
+							<td>-</td>
+						  </tr>
+						</tbody>
+					  </table>
+					</div><!-- end table-responsive -->
+				</div><!-- end Output -->
+			</div><!-- end Calc -->
+		</div><!-- end Stats -->
+		
+		<div id="Evo" class="container-fluid section">
+			<h1>Evolution</h1>
+			<div class="container-fluid Calc">
+				<div id="evoInput" class="Input">
+					<form class="form well">
+						<div class="form-group">
+							<div class="attr">
+								<label>Level</label>
+								<input id="inputLevel" type="number" class="form-control" placeholder="Level"></input>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="attr">
+								<label>Exp</label>
+								<input id="inputExp" type="number" class="form-control" placeholder="Exp"></input>
+							</div>
+						</div>
+						<a id="evoBtnCalc" type="button" class="btn btn-success btnCalc">Calc</a>
+					</form>
+				</div><!-- end Input -->
+				<div id="evoOutput" class="Output">
+					<div class="table-responsive well">
+					  <table class="table">
+						<tbody>
+						  <tr>
+							<td>Exp to next Blessed Tome II</td>
+							<td id="Exp">-</td>
+						  </tr>
+						  <tr>
+							<td>Books to consume</td>
+							<td id="Consume">-</td>
+						  </tr>
+						  <tr>
+							<td>Returned books</td>
+							<td id="Returned">-</td>
+						  </tr>
+						</tbody>
+					  </table>
+					</div><!-- end table-responsive -->
+				</div><!-- end Output -->
+			</div><!-- end Calc -->
+		</div><!-- end Evo -->
+	</main>
+	<footer>
+		<p>&copy; 2016</p>
+	</footer>
+	
+	<!--Javascript-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		var PD;
+		var SK;
+		var PDskill;
+		var SKskill;
+		var heroes = [];
+		var expBooks = [];
+		
+		function Hero (DMG, HP, ATKSPD, MOV, skill) {
+			this.DMG = DMG;
+			this.HP = HP;
+			this.ATKSPD = ATKSPD;
+			this.MOV = MOV;
+			this.skill = skill;
+		}
+		function Skill (name, incATK, incATKrate, incMOV) {
+			this.name = name;
+			this.incATK = incATK;
+			this.incATKrate = incATKrate;
+			this.incMOV = incMOV;
+		}
+		function Book (name, exp, color) {
+			this.name = name;
+			this.exp = exp;
+			this.color = color;
+		}
+		function CreateHeroes() {
+			PD = new Hero([280, 14], [1500, 75], 1.0, [170, 5], PDskill);
+			SK = new Hero([240, 12], [3200, 160], 0.6, [310, 10], SKskill);
+			heroes.push(PD, SK);
+		}
+		function CreateSkills() {
+			PDskill = new Skill("Celebrate", [1.1, 0.05], [1.1, 0.05], [1.1, 0.05]);
+			SKskill = new Skill("Vengeful Sword", [3.5, 0.5], [0, 0], [0, 0]);
+		}
+		function CreateBooks() {
+			var tome1 = new Book('Tome I', 1000, 'green');
+			var tome2 = new Book('Tome II', 5000, 'blue');
+			var tome3 = new Book('Tome III', 20000, 'pink');
+			var bTome1 = new Book('Blessed Tome I', 100000, 'yellow');
+			var bTome2 = new Book('Blessed Tome II', 500000, 'purple');
+			expBooks.push(tome1, tome2, tome3, bTome1, bTome2);
+		}
+		function HeroStats(hero, level, skillLevel, talentLevel, crestLevel) {
+			var DMG = hero.DMG[0] + hero.DMG[1] * (level-1) + 50 * crestLevel;
+			var HP = hero.HP[0] + hero.HP[1] * (level-1) + 500 * crestLevel;
+			var ATKSPD = hero.ATKSPD - 0.05 * skillLevel;
+			var MOV = hero.MOV[0] + hero.MOV[1] * (level-1) + 10 * talentLevel;
+			$('#DMG').html(DMG);
+			$('#HP').html(HP);
+			$('#ATKSPD').html(ATKSPD);
+			$('#MOV').html(MOV);
+		}
+		function LevelBaseExp(level) {
+			var levelBaseExp = [0];
+			var baseExp = 0;
+			var baseExpStep = 4195500;
+			var n = 0;
+			for (var i = 0; i < 20; i++) {
+				n += Math.floor(i / 5);
+				baseExp += baseExpStep + (200000 * i) + (50000 * n);
+				levelBaseExp.push(baseExp);
+			}
+			return levelBaseExp[level-180];
+		}
+		function Evo(level, exp) {
+			var baseExp = [1, 304501, 409001, 313501, 18001, 22501, 277001, 281501, 36001, 40501, 295001];
+			var index = level - 180;
+			var step = 500000;
+			var multiple = Math.ceil(exp / step);
+			var remainder = baseExp[index] + (multiple * step) - exp;
+			var expOverLv180 = LevelBaseExp(level) + (multiple * step);
+			var returned = Math.ceil(expOverLv180 / step);
+
+			var consume = '';
+			if (remainder > step - 1000) {
+				consume = '0 books';
+			}
+			else {
+				var books = [];
+				var difference = Math.ceil(remainder / 1000) * 1000;	//Round up to nearest 1000
+				for (var i = expBooks.length; i > 0; i--) {
+					var book = expBooks[i-1];
+					var amount = Math.floor(difference / book.exp);
+					if (amount > 0) {
+						difference -= (amount * book.exp);
+						books.push([amount, book.name]);
+					}
+				}
+				for (i in books.reverse()) {
+					var amount = books[i][0];
+					var name = books[i][1];
+					consume += amount + ' ' + name + ' ';
+				}
+			}
+			$('#Exp').html(remainder);
+			$('#Consume').html(consume);
+			$('#Returned').html(returned);
+		}
+		function InputValue(input, minValue, maxValue) {
+			var value = parseInt($(input).val());
+			$(input).val(value);
+			$(input).attr("placeholder", minValue + ' - ' + maxValue);
+			if (value < minValue) {
+				$(input).val(minValue);
+				value = minValue;
+			}
+			else if (value > maxValue) {
+				$(input).val(maxValue);
+				value = maxValue;
+			}
+			return value;
+		}
+		function CalcStats() {
+			var hero = heroes[$('#selectHero').val()];
+			var heroLevel = $("#inputHeroLevel").val();
+			var skillLevel = $('#selectSkillLevel').val();
+			var talentLevel = $('#selectTalentLevel').val();
+			var crestLevel = $('#selectCrestLevel').val();
+			var inscription = $("#inputInscription").val();
+			HeroStats(hero, heroLevel, skillLevel, talentLevel, crestLevel);
+		}
+		function CalcEvo() {
+			var level = $("#inputLevel").val();
+			var exp = $("#inputExp").val();
+			Evo(level, exp);
+		}
+		function CheckStatsInput() {
+			var heroLevel = InputValue('#inputHeroLevel', 1, 200);
+			var inscription = InputValue('#inputInscription', 0, 100);
+			var heroLevelOk = heroLevel >= 1 && heroLevel <= 200;
+			var inscriptionOk = inscription >= 0 && inscription <= 100;
+			if (heroLevelOk) {
+				$("#inputHeroLevel").css("border", "");
+			}
+			else {
+				$("#inputHeroLevel").css("border", "2px solid red");
+			}
+			if (inscriptionOk) {
+				$("#inputInscription").css("border", "");
+			}
+			else {
+				$("#inputInscription").css("border", "2px solid red");
+			}
+			return heroLevelOk && inscriptionOk;
+		}
+		function CheckEvoInput() {
+			var level = InputValue('#inputLevel', 180, 200);
+			var exp = InputValue('#inputExp', 0, 500000);
+			var levelOk = level >= 180 && level <= 200;
+			var expOk = exp >= 0 && exp <= 500000;
+			if (levelOk) {
+				$("#inputLevel").css("border", "");
+			}
+			else {
+				$("#inputLevel").css("border", "2px solid red");
+			}
+			if (expOk) {
+				$("#inputExp").css("border", "");
+			}
+			else {
+				$("#inputExp").css("border", "2px solid red");
+			}
+			return levelOk && expOk;
+		}
+		function SetQuickSelect() {
+			$("#quickSelectSkillLevel").val($('#selectSkillLevel').val());
+			$("#quickSelectTalentLevel").val($('#selectTalentLevel').val());
+			$("#quickSelectCrestLevel").val($('#selectCrestLevel').val());
+		}
+		function SetSelect() {
+			$("#selectSkillLevel").val($('#quickSelectSkillLevel').val());
+			$("#selectTalentLevel").val($('#quickSelectTalentLevel').val());
+			$("#selectCrestLevel").val($('#quickSelectCrestLevel').val());
+		}
+		function UpdateSkill() {
+			$('#inputSkill').val(heroes[$('#selectHero').val()].skill.name);
+		}
+		function DisableSelect() {
+			var val = $('#selectEvo').val();
+			if (val == 'no') {
+				$('#selectArtifact, #selectArtifactLevel').attr('disabled', true);
+				$('#groupArtifact').css('opacity', 0.2);
+			}
+			else {
+				$('#selectArtifact, #selectArtifactLevel').attr('disabled', false);
+				$('#groupArtifact').css('opacity', 1);
+			}
+		}
+		function MobileSize() {
+			return $(".TableNav").css("display") == "flex";
+		}
+		function Visible(element1, element2) {
+			return [$(element1).is(':visible'), $(element2).is(':visible')];
+		}
+		function TotHeight(element1, element2) {
+			return $(element1).height() + $(element2).height();
+		}
+		function HideShow(input, output) {
+			if (MobileSize() == false || TotHeight(input, output) < 750) {
+				$(input).show();
+				$(output).show();
+				$("#evoTableNav").hide();
+			}
+			else if (Visible(input, output)[0]) {
+				$(output).hide();
+			}
+		}
+		function StretchComp(input, output) {
+			if (MobileSize()) {
+				$(input).css("min-width", "75vw");
+				$(output).css("min-width", "75vw");
+			}
+			else {
+				$(input).css("min-width", "25vw");
+				$(output).css("min-width", "25vw");
+			}
+		}
+		function ToggleHideShow(input, output) {
+			var visible = Visible(input, output);
+			if (visible[0] != visible[1]) {
+				$(input).toggle();
+				$(output).toggle();
+			}
+		}
+		$(window).resize(function(){
+			HideShow("#statsInput", "#statsOutput");
+			HideShow("#evoInput", "#evoOutput");
+			StretchComp("#statsInput", "#statsOutput");
+			StretchComp("#evoInput", "#evoOutput");
+		});
+		$(document).ready(function(){
+			HideShow("#statsInput", "#statsOutput");
+			HideShow("#evoInput", "#evoOutput");
+			DisableSelect();
+			CreateSkills();
+			CreateHeroes();
+			UpdateSkill();
+			CreateBooks();
+			
+			$("#statsBtnCalc").click(function(){
+				if (CheckStatsInput()) {
+					CalcStats();
+					SetQuickSelect("stats");
+					ToggleHideShow("#statsInput", "#statsOutput");
+				}
+			});
+			$("#evoBtnCalc").click(function(e){
+				if (CheckEvoInput()) {
+					CalcEvo();
+					ToggleHideShow("#evoInput", "#evoOutput");
+				}
+			});
+			$("#statsEdit").click(function(){
+				ToggleHideShow("#statsInput", "#statsOutput");
+			});
+			$("#evoEdit").click(function(){
+				ToggleHideShow("#evoInput", "#evoOutput");
+			});
+			$('#selectHero').change(function(){
+				UpdateSkill();
+			});
+			$('#selectEvo').change(function(){
+				DisableSelect();
+			});
+			$("#quickSelectSkillLevel").change(function(){
+				SetSelect();
+				CalcStats();
+			});
+			$("#quickSelectTalentLevel").change(function(){
+				SetSelect();
+				CalcStats();
+			});
+			$("#quickSelectCrestLevel").change(function(){
+				SetSelect();
+				CalcStats();
+			});
+			$("#inputHeroLevel").change(function(){
+				InputValue('#inputHeroLevel', 1, 200);
+			});
+			$("#inputInscription").change(function(){
+				InputValue('#inputInscription', 0, 100);
+			});
+			$("#inputLevel").change(function(){
+				InputValue('#inputLevel', 180, 200);
+			});
+			$("#inputExp").change(function(){
+				InputValue('#inputExp', 0, 500000);
+			});
+			
+			//--------------------------------------------------------------
+			// Initialize Tooltip
+			$('[data-toggle="tooltip"]').tooltip();
+			
+			// Add smooth scrolling
+			$("a"/*".section a, .carousel a, .btn, *//*"#statsBtnCalc, #evoBtnCalc, #statsEdit, #evoEdit, .navbar a, footer a[href='#']"*/).on('click', function(event) {
+
+				// Make sure this.hash has a value before overriding default behavior
+				if (this.hash !== "") {
+
+					// Prevent default anchor click behavior
+					event.preventDefault();
+
+					// Store hash
+					var hash = this.hash;
+					var navHeight = $('.navbar-header').height();
+
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+					scrollTop: $(hash).offset().top - navHeight
+					}, 700, function(){
+
+					// Add hash (#) to URL when done scrolling (default click behavior)
+					window.location.hash = hash - navHeight;
+					});
+				} // End if
+			});
+		});
+	</script>
+</body>
+</html>
